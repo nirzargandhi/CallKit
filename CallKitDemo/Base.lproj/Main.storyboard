@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uGZ-WN-Dkn">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--HomeVC-->
+        <scene sceneID="suw-xl-HuP">
+            <objects>
+                <viewController storyboardIdentifier="HomeVC" id="uGZ-WN-Dkn" customClass="HomeVC" customModule="CallKitDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8RD-uZ-3cs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter phone number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2ou-lA-8cp">
+                                <rect key="frame" x="20" y="40" width="335" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="AeN-Ci-XtR">
+                                <rect key="frame" x="20" y="597" width="335" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3TJ-F0-lGZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="157.5" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="V4V-pt-bwm"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Start Call"/>
+                                        <connections>
+                                            <action selector="startCallBtnTouch:" destination="uGZ-WN-Dkn" eventType="touchUpInside" id="k7O-zq-nTF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="597-4q-qDc">
+                                        <rect key="frame" x="177.5" y="0.0" width="157.5" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Qpz-Nn-cFi"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="End Call"/>
+                                        <connections>
+                                            <action selector="endCallBtnTouch:" destination="uGZ-WN-Dkn" eventType="touchUpInside" id="gag-Tx-Wqi"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="H8Z-vi-K6L"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2ou-lA-8cp" firstAttribute="leading" secondItem="H8Z-vi-K6L" secondAttribute="leading" constant="20" id="0OZ-iG-IBP"/>
+                            <constraint firstAttribute="bottom" secondItem="AeN-Ci-XtR" secondAttribute="bottom" constant="20" id="BI3-dW-ENu"/>
+                            <constraint firstItem="2ou-lA-8cp" firstAttribute="top" secondItem="H8Z-vi-K6L" secondAttribute="top" constant="20" id="ToX-pV-nmk"/>
+                            <constraint firstItem="H8Z-vi-K6L" firstAttribute="trailing" secondItem="2ou-lA-8cp" secondAttribute="trailing" constant="20" id="d7u-OU-wxi"/>
+                            <constraint firstAttribute="trailing" secondItem="AeN-Ci-XtR" secondAttribute="trailing" constant="20" id="e0d-ge-AHl"/>
+                            <constraint firstItem="AeN-Ci-XtR" firstAttribute="leading" secondItem="8RD-uZ-3cs" secondAttribute="leading" constant="20" id="fGK-8n-K54"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="endCallBtn" destination="597-4q-qDc" id="Rwc-mF-DM4"/>
+                        <outlet property="phoneNumberTF" destination="2ou-lA-8cp" id="o0o-5Q-fLR"/>
+                        <outlet property="stackView" destination="AeN-Ci-XtR" id="Yoe-xH-TDs"/>
+                        <outlet property="startCallBtn" destination="3TJ-F0-lGZ" id="C9V-6R-BdN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BTC-Fc-4mV" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="127" y="-49"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     // MARK: - RootView Setup
-    func setRootViewController(rootVC: UIViewController) {
+    fileprivate func setRootViewController(rootVC: UIViewController) {
         
         self.navController = UINavigationController(rootViewController: rootVC)
         self.window?.rootViewController = self.navController
@@ -50,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 // MARK: - Call Back
 extension AppDelegate {
     
-    private func microphonePermission() -> Bool {
+    fileprivate func microphonePermission() -> Bool {
         
         var permission = false
         
@@ -80,7 +80,7 @@ extension AppDelegate {
 extension AppDelegate: UNUserNotificationCenterDelegate, PKPushRegistryDelegate {
     
     // Register for APNS
-    func registerForPushNotifications() {
+    fileprivate func registerForPushNotifications() {
         
         UNUserNotificationCenter.current().delegate = self
         UNUserNotificationCenter.current().requestAuthorization(options: [.sound,.alert,.badge]) { (granted, error) in
@@ -91,7 +91,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate, PKPushRegistryDelegate 
     }
     
     // Register for VoIP
-    private func registratForVOIP() {
+    fileprivate func registratForVOIP() {
         
         let mainQueue = DispatchQueue.main
         let voipRegistry: PKPushRegistry = PKPushRegistry(queue: mainQueue)
@@ -99,7 +99,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate, PKPushRegistryDelegate 
         voipRegistry.desiredPushTypes = [.voIP]
     }
     
-    private func getNotificationSettings() {
+    fileprivate func getNotificationSettings() {
         
         UNUserNotificationCenter.current().getNotificationSettings { settings in
             
@@ -160,7 +160,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate, PKPushRegistryDelegate 
         completion()
     }
     
-    private func handleIncomingCall(payload: PKPushPayload) {
+    fileprivate func handleIncomingCall(payload: PKPushPayload) {
         
         var callerName = ""
         
